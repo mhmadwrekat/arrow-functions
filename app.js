@@ -170,7 +170,6 @@ Student.prototype.scopeArrow = () => console.log(this);
 console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
-
 // 1. What is "this" when joe.scope() is invoked?
 // ANSWER : when console log -this- is return ( undefined ) .
 
