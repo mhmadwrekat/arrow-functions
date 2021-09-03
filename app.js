@@ -60,7 +60,6 @@ const addOneLiner = (num1, num2) => `${num1} + ${num2} = ${num1 + num2}`;
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log('Add as a one-liner:', addOneLiner(4, 5));
 
-
 // STEP 7
 // What if we have multiple lines of code?
 // We need to use a code block
@@ -71,7 +70,6 @@ const multiLiner = word => {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log('Multi-line arrow function:', multiLiner('hello'));
-
 
 // STEP 8
 // The way an object is returned is different with an arrow function, too.
@@ -87,7 +85,6 @@ const oldObject = function(array) {
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log('Hello from the old object function', oldObject(['hi', 'hello', 'are you there?']));
 
-
 // STEP 9
 // With an arrow function, we need to wrap our object in parentheses
 // Otherwise, it will be interpreted as a code block
@@ -99,7 +96,6 @@ const newObject = array => ({
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log('Hello from the new object function', newObject(['hi', 'hello', 'are you there?']));
-
 
 // STEP 10
 // Uncomment the console.log lines to view the output of each function in the browser console.
@@ -119,13 +115,10 @@ let objectLit = () => ({
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(objectLit());
 
-
 let sumAndProduct = (a,b) => [ a+b , a*b ] ;
-
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sumAndProduct(3, 9));
-
 
 let message = (name) => `Hello, ${name}!`;
 // TODO: Uncomment the following line of code to see the output in the browser console
@@ -138,7 +131,6 @@ let Student = function(name, age, hometown) {
   this.hometown = hometown;
 };
 
-
 let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
@@ -146,23 +138,22 @@ let joe = new Student('Joe', 'Schmoe', 100);
 console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
-/*
 Student.prototype.greeting = function() {
   return `Hi, my name is ${this.name}`;
-};*/
-Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
+};
+
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
  console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
-Student.courseName = () => 'This student is enrolled in Code 301.';
+Student.courseName = function() {
+  return 'This student is enrolled in Code 301.';
+};
 
 // TODO: Uncomment the following line of code to see the output in the browser console
- console.log(Student.courseName());
-
-
+console.log(Student.courseName());
 
 // STEP 11
 // How do arrow functions affect constructor functions?
@@ -171,17 +162,22 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
+
 // 1. What is "this" when joe.scope() is invoked?
-//
+// ANSWER : when console log -this- is return ( undefined ) .
+
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// ANSWER : to global window object .
+
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// ANSWER : in arrow function value of this is therefore the same as the this
+// of the enclosing scope ( the surrounding non-arrow function ) .
+
