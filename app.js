@@ -180,4 +180,3 @@ console.log(joe.scopeArrow());
 // 3. Explain why "this" is different when an arrow function is used.
 // ANSWER : in arrow function value of this is therefore the same as the this
 // of the enclosing scope ( the surrounding non-arrow function ) .
-
